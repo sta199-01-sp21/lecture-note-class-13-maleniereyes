@@ -254,10 +254,10 @@ Create a 95% bootstrap confidence interval for the population *mean* price of
 
 First, identify the following:
 
-- Population: 
-- Parameter of interest:
-- Sample:
-- Sample size:
+- Population: 1-bedroom apartments in Manhattan
+- Parameter of interest: mean price
+- Sample: 1-bedroom apartments
+- Sample size: 20
 
 To create our confidence interval, we'll follow the four-step bootstrap
 scheme outlined in the slides using functions from `infer`.
@@ -332,7 +332,8 @@ whichever method you prefer.
 get_ci(boot_means, level = 0.95)
 ```
 
-What does this mean?
+What does this mean? It means that in repeated samples, we are 95% confident
+that our intervals contain the true value. 
 
 **Interpretation**:
 
