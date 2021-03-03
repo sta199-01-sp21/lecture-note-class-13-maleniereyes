@@ -344,7 +344,14 @@ population *median* price of 1-bedroom apartments in Manhattan. Do this in a
 single code chunk with a single pipeline. Provide an interpretation of your result.
 
 ```{r practice_1}
-
+manhattan %>% 
+  specify(response = rent) %>%
+  generate(reps = 10000, type = "bootstrap") %>%
+  calculate(stat = "median") %>%
+  summarise(
+    lb = quantile(stat, 0.025),
+    ub = quantile(stat, 0.975)
+  )
 ```
 
 ### A confidence interval for the population proportion - $p$
